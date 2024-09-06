@@ -1,13 +1,12 @@
 {
     "name": "File Handling Demo",
-    "start_url": "/",
+    "start_url": "/webloc/",
     "display": "standalone",
     "file_handlers": [
       {
-        "action": "/page/",
+        "action": "/webloc/",
         "accept": {
-          "text/plain": [".webloc"],
-          "application/octet-stream": [".webloc_2_"]
+          "text/plain": [".webloc"]
         }
       }
     ],
