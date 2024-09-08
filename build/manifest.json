@@ -1,0 +1,25 @@
+{
+    "name": "File Handling Demo",
+    "start_url": "/webloc/",
+    "display": "standalone",
+    "file_handlers": [
+      {
+        "action": "/webloc/",
+        "accept": {
+          "text/plain": [".webloc"]
+        }
+      }
+    ],
+   
+    "icons": [
+        {
+            "src": "ios/192.png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "ios/512.png",
+            "sizes": "512x512"
+        }
+    ]
+}
+  
