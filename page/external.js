@@ -1,4 +1,30 @@
 import {file2parsed} from "./browser.js";
+
+if ('launchQueue' in window) {
+    launchQueue.setConsumer(launchParams => {
+        handleFiles(launchParams.files);
+    });
+} else {
+    console.error('File Handling API is not supported!');
+}
+
+async function handleFiles(files) {
+    for (const file of files) {
+        debugger
+        let out = await file2parsed(await file.getFile())
+        let link = document.createElement("a");
+        link.href = out[0].URL;
+        link.innerText = out[0].URL
+        link.target = "_blank"
+        document.body.appendChild(link)
+        link.click()
+        const blob = await file.getFile();
+        const text = await blob.text();
+        console.log(`${file.name} handled, content: ${text}`);
+    }
+close()
+}
+
 window.__external__ = {}
 
 
